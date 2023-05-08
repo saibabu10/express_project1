@@ -1,7 +1,16 @@
 const express = require('express')
 const app = express()
-
+const upcoming = require('./routes/upcoming')
+const service = require('./routes/services')
+const aboutus = require('./routes/aboutus')
+const ourclients = require('./routes/ourClients')
+const contactus = require('./routes/contactus')
 app.get('/',(request,response)=>{
     response.send("This is landing page")
 })
+app.use('/upcoming',upcoming)
+app.use('/services',service)
+app.use('/aboutus',aboutus)
+app.use('/ourClients',ourclients)
+app.use('/contactus',contactus)
 app.listen(4500);
